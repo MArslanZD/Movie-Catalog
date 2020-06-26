@@ -1,0 +1,31 @@
+<h2>Movie Catalog</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <input type="text" placeholder="Search Movies" class="form-control" #searchField id="search-field"/>           
+        </div>
+        <div class="col-md-2 buttonDiv">
+            <span>
+                <button class="btn btn-danger searchButton" (click)="searchMovies(searchField.value)">
+                  <span class="fa fa-search " aria-hidden="true"></span>
+                </button>
+              </span>
+        </div>
+    </div>
+</div>
+
+<div class="container" >
+    <div class="row"> 
+        <div class="col-md-4" *ngFor="let movie of movieList">
+        <div class="mat-app-background basic-container" style="margin-top:10px">
+        <mat-card>       
+         <a href="https://www.imdb.com/title/{{movie.imdbID}}/" target="_blank">
+          <img  src="{{ movie.Poster }}" alt="{{movie.Title}}">
+           </a>                           
+        </mat-card>
+        </div>
+    </div>   
+                
+    </div>
+</div>
